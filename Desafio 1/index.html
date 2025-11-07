@@ -6,12 +6,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <script src="./Scripts.js"></script>
+    <link rel="stylesheet" href="/Desafio 1/style.css">
     <title>Conversor de Moedas</title>
 </head>
 <body>
-    <img class="logo" src="/Assets/logo.gif" alt="Logo-do-Conversor-de-Moedas">
+    <img class="logo" src="/Desafio 1/Assets/logo.gif" alt="Logo-do-Conversor-de-Moedas">
     
     <br/>
     
@@ -26,10 +25,11 @@
         <label>
             Converter <b>para</b>:
 
-            <select id="moeda-para">
+            <select class="currency-select">
                 <option value="USD">US$ Dólar Americano (USD)</option>
                 <option value="EUR">Euro (EUR)</option>
                 <option value="GBP">Libra Esterlina (GBP)</option>
+                <option value="BTC">Bitcoin (BTC)</option>
             </select>
         </label>
         <label>
@@ -40,21 +40,21 @@
 
         <section id="resultado">
             <div class="currancy-box">
-                <img src="/Assets/brasil 2.png" alt="Logo-Moeda-Real-Brasileiro">
-                <p class="currency" id="Moeda-a-converter">Real Brasileiro</p>
-                <p class="currency-value" id="moeda-a-converter">R$ 0,00</p>
+                <img src="/Desafio 1/Assets/brasil 2.png" alt="Logo-Moeda-Real-Brasileiro">
+                <p class="currency" >Real Brasileiro</p>
+                <p class="currency-value" id="valor-a-converter">R$ 0,00</p>
             </div>
             
-            <img class="arrow" src="/Assets/Vector.png" alt="Seta-de-Conversão">
+            <img class="arrow" src="/Desafio 1/Assets/Vector.png" alt="Seta-de-Conversão">
             
             <div class="currancy-box">
-                <img src="/Assets/estados-unidos (1) 1.png" alt="Logo-Moeda-Dólar-Americano">
-                <p class="currency" id="moeda-convertida">Dólar Americano</p>
+                <img src="/Desafio 1/Assets/estados-unidos (1) 1.png" alt="Logo-Moeda-Dólar-Americano">
+                <p class="currency" >Dólar Americano</p>
                 <p class="currency-value" id="valor-convertido">US$ 0.00</p>
             </div>
         </section>
 
     </main>
-    
 </body>
+<script src="Scripts.js"></script>
 </html>
