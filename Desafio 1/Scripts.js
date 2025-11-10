@@ -51,4 +51,32 @@ function convertValues() {
     }).format(inputValue);  // modifica o valor a ser convertido e formata o valor em Real Brasileiro
 }
 
-convertButton.addEventListener("click", convertValues)
+function change() {
+    const convertedName = document.getElementById("converted-name"); //Variavel do nome da moeda convertida
+    const convertedImg = document.getElementById("converted-img");   //Variavel do logo da moeda convertida
+
+    if (currencySelect.value === "USD") {
+        convertedName.innerHTML = "Dólar";
+        convertedImg.src = "./assets/estados-unidos (1) 1.png";
+    }
+
+    if (currencySelect.value === "EUR") {
+        convertedName.innerHTML = "Euro";
+        convertedImg.src = "./Assets/Euro.png";
+    }
+
+    if (currencySelect.value === "GBP") {
+        convertedName.innerHTML = "Libra Esterlina";
+        convertedImg.src = "./Assets/libra 1.png";
+    }
+
+    if (currencySelect.value === "BTC") {
+        convertedName.innerHTML = "Bitcoin";
+        convertedImg.src = "./Assets/bitcoin 1.png";
+    }
+
+    convertValues();
+
+}
+convertButton.addEventListener("click", convertValues);
+currencySelect.addEventListener("change", change);
