@@ -21,7 +21,6 @@ async function convertValues() {
         const exchangeRate = data.rates[toCurrency.value];
 
         const convertedValue = (amount.value * exchangeRate).toFixed(2);
-        console.log(convertedValue);
 
         toConvertAmount.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
@@ -32,40 +31,13 @@ async function convertValues() {
             style: "currency",
             currency: toCurrency.value,
         }).format(convertedValue);
+
+        console.log(data);
         
     } catch (error) {
         alert("Erro ao converter valores. Por favor, tente novamente.");
     }
 }
-    function change() {
-
-        console.log("mudar imagem da imagem")
-        
-        if (fromCurrency.value === "BRL") {
-            toConvertName.innerHTML = "Real Brasileiro";
-            toConvertImg.src = "./Assets/brasil 2.png";
-        }
-
-        if (fromCurrency.value === "USD") {
-            toConvertName.innerHTML = "Dólar Americano";
-            toConvertImg.src = "./Assets/estados-unidos (1) 1.png";
-        }
-
-        if (fromCurrency.value === "EUR") {
-            toConvertName.innerHTML = "Euro";
-            toConvertImg.src = "./Assets/euro 1.png";
-        }
-
-        if (fromCurrency.value === "GBP") {
-            toConvertName.innerHTML = "Libra Esterlina";
-            toConvertImg.src = "./Assets/libra 1.png";
-        }
-
-        if (fromCurrency.value === "BTC") {
-            toConvertName.innerHTML = "Bitcoin";
-            toConvertImg.src = "./Assets/bitcoin 1.png";
-        }
-    }
 
     function change() {
         
@@ -89,13 +61,35 @@ async function convertValues() {
             convertedImg.src = "./Assets/libra 1.png";
         }
 
-        if (toCurrency.value === "BTC") {
-            convertedName.innerHTML = "Bitcoin";
-            convertedImg.src = "./Assets/bitcoin 1.png";
-        }
+        convertValues();
 
     }
 
+function changeCurrency() {
+
+    if (fromCurrency.value === "BRL") {
+        toConvertName.innerHTML = "Real Brasileiro";
+        toConvertImg.src = "./Assets/brasil 2.png";
+    }  
+
+    if (fromCurrency.value === "USD") {
+        toConvertName.innerHTML = "Dólar Americano";
+        toConvertImg.src = "./Assets/estados-unidos (1) 1.png";
+    }
+
+    if (fromCurrency.value === "EUR") {
+        toConvertName.innerHTML = "Euro";
+        toConvertImg.src = "./Assets/Euro.png";
+    }
+
+    if (fromCurrency.value === "GBP") {
+        toConvertName.innerHTML = "Libra Esterlina";
+        toConvertImg.src = "./Assets/libra 1.png";
+    }
+
+    convertValues();
+
+}
 convertButton.addEventListener("click", convertValues);
 toCurrency.addEventListener("change", change);
-fromCurrency.addEventListener("change", change);
+fromCurrency.addEventListener("change", changeCurrency);
