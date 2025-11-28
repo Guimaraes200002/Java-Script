@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const cart = [10, 244, 99, 2, 20, 33, 250];
+    let totalValue = 0;
+    let totalDiscount = 0;
+    let totalValueWithDiscount = 0;
+
+    function Discount(value, discount) {  //função para calcular desconto
+        return value * discount;
+    }
+    cart.forEach((price) => {
+        
+        if (price > 30) {  //aplica desconto de 10% para produtos acima de 30
+           let discount = Discount(price, 0.1);
+            totalDiscount += discount; //acumula o valor do desconto
+            totalValue += price; // acumula o valor total sem desconto
+        } else {
+            totalValue += price;
+        }
+        
+        totalValueWithDiscount = totalValue - totalDiscount; //calcula o valor total com desconto
+    })
+    console.log(`Valor total do carrinho: R$ ${totalValue.toFixed(2)}, Desconto total: R$ ${totalDiscount.toFixed(2)}, Valor total com desconto: R$ ${totalValueWithDiscount.toFixed(2)}`);
+</script>
+
+</html>
