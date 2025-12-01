@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background: url("https://picsum.photos/1920/1080");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.gameButtons button {
+    font-size: 50px;
+    margin: 20px 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s;
+
+}
+
+.gameButtons button:hover {
+    transform: scale(1.1);
+}
+
+.gameButtons button:active {
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+#rock {
+    background-color: #33af48;
+}
+
+#paper {
+    background-color: #fff82e;
+}
+
+#scissors {
+    background-color: #2c3ccd;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    
+}
+
+p {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+p #machineScore {
+    color: #db0d0d;
+}
+p #playerScore {
+    color: #0f40df;
+}
