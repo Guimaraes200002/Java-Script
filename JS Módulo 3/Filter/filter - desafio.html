@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script> 
+//Desafio 1 
+    const list = [20, 3, 234, 12, 17, 541, 6, 87, 275, 1000];
+
+    const evenNumbers = list.filter((number) => {
+        if (number < 100 || number % 2 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    
+    console.log(evenNumbers);
+
+//Desafio 2
+    const companies = [
+        { name: "Samsung", marketValue: 50, CEO: "Kim Hyun Suk", foundedOn: 1938, category: "Tech" },
+        { name: "Microsoft", marketValue: 415, CEO: "Satya Nadella", foundedOn: 1975, category: "Tech" },
+        { name: "Intel", marketValue: 117, CEO: "Brian Krzanich", foundedOn: 1968, category: "Tech" },
+        { name: "HP", marketValue: 33, CEO: "Dion Weisler", foundedOn: 1939, category: "Tech" },
+        { name: "Facebook", marketValue: 383, CEO: "Mark Zuckerberg", foundedOn: 2004, category: "Tech" },
+        { name: "Volkswagen", marketValue: 73, CEO: "Matthias Müller", foundedOn: 1937, category: "Automotive" },
+        { name: "Toyota", marketValue: 192, CEO: "Akio Toyoda", foundedOn: 1937, category: "Automotive" },
+        { name: "Ford", marketValue: 35, CEO: "Jim Hackett", foundedOn: 1903, category: "Automotive" },
+        { name: "BMW", marketValue: 59, CEO: "Norbert Reithofer", foundedOn: 1916, category: "Automotive" }
+    ];
+
+    const bigTechCompanies = companies.filter((company) => {
+        return company.category === "Tech" && company.marketValue > 200;
+    });
+
+    console.log(bigTechCompanies);
+</script>
+</html>

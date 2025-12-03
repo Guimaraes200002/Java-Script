@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+ O Map aceita até 3 parâmetros:
+
+const novoArray = arrayOriginal.map((valorAtual, indice, arrayOriginal) => xxx )
+
+
+	1) O Map vai passar por todos os itens do array, e o primeiro parâmetro é cada item, um por vez do array que estamos mapeando. Item OBRIGATÓRIO.
+	2) O indíce é a posição atual que estamos mapeando. Item OPCIONAL.
+	3) Uma cópia do array original. Item OPCIONAL.
+
+*/
+
+const numbers = [1, 2, 3, 4];
+const double = numbers.map((num) => num * 2);
+
+// double ficou assim... [2, 4, 6, 8];
+// numbers continua...   [1, 2, 3, 4];
+</script>
+</html>
