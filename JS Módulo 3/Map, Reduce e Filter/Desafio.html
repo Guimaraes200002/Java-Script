@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Desafio 1 
+    const companies = [
+        { name: "Samsung", marketValue: 50, CEO: "Kim Hyun Suk", foundedOn: 1938, category: "Tech" },
+        { name: "Microsoft", marketValue: 415, CEO: "Satya Nadella", foundedOn: 1975, category: "Tech" },
+        { name: "Intel", marketValue: 117, CEO: "Brian Krzanich", foundedOn: 1968, category: "Tech" },
+        { name: "HP", marketValue: 33, CEO: "Dion Weisler", foundedOn: 1939, category: "Tech" },
+        { name: "Facebook", marketValue: 383, CEO: "Mark Zuckerberg", foundedOn: 2004, category: "Tech" },
+        { name: "Volkswagen", marketValue: 73, CEO: "Matthias Müller", foundedOn: 1937, category: "Automotive" },
+        { name: "Toyota", marketValue: 192, CEO: "Akio Toyoda", foundedOn: 1937, category: "Automotive" },
+        { name: "Ford", marketValue: 35, CEO: "Jim Hackett", foundedOn: 1903, category: "Automotive" },
+        { name: "BMW", marketValue: 59, CEO: "Norbert Reithofer", foundedOn: 1916, category: "Automotive" }
+    ];
+
+    //Adicionar 10% de valor de mercado a todas as companhias -> MAP
+    //Filtrar somente as companhias fundadas abaixo de 1990 -> FILTER
+    //Somar o valor de mercado das companhias restantes -> REDUCE
+
+    const updatedCompanies = companies
+        .map((company) => {
+            return {
+                marketValue: company.marketValue * 1.1, // adiciona 10%
+                foundedOn: company.foundedOn
+            };
+        })
+        .filter((company) => company.foundedOn < 1990) // filtra fundadas antes de 1990
+        .reduce((accumulator, company) => {
+            return accumulator + company.marketValue; // soma os valores de mercado
+        }, 0);
+
+    console.log(`O valor total de mercado das companhias fundadas antes de 1990 é: ${updatedCompanies}`);
+
+    //Desafio 2
+    //Subtrair 10% de valor de mercado a todas as companhias -> MAP
+    //Filtrar somente as companhias fundadas após 1950 -> FILTER
+    //Somar o valor de mercado das companhias restantes -> REDUCE
+
+    const reducedCompanies = companies
+        .map((company) => {
+            return {
+                marketValue: company.marketValue * 0.9, // subtrai 10%
+                foundedOn: company.foundedOn
+            };
+        })
+        .filter((company) => company.foundedOn > 1950) // filtra fundadas após 1950
+        .reduce((accumulator, company) => {
+            return accumulator + company.marketValue; // soma os valores de mercado
+        }, 0);
+    console.log(`O valor total de mercado das companhias fundadas após 1950 é: ${reducedCompanies}`);
+
+</script>
+
+</html>
